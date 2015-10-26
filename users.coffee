@@ -1,4 +1,4 @@
-util = require("util")
+Util = require("util")
 
 module.exports = (robot) ->
 
@@ -18,7 +18,7 @@ module.exports = (robot) ->
             else
                 res.send "There are #{users.length} total users."
         for user in users
-            res.send "```  #{util.inspect(user)}```"
+            res.send "```  #{Util.inspect(user)}```"
 
     robot.respond /list online users/i, (res) ->
         users = (user for user in getAllUsers() when user["slack"]["presence"] is "active")
@@ -30,4 +30,4 @@ module.exports = (robot) ->
             else
                 res.send "There are #{users.length} online users."
         for user in users
-            res.send "```  #{util.inspect(user)}```"
+            res.send "```  #{Util.inspect(user)}```"
