@@ -8,4 +8,4 @@ module.exports = (robot) ->
 
     robot.respond /uptime/i, (res) ->
         getUptime (data) ->
-            res.send data
+            res.send data.toString "utf8"
