@@ -4,7 +4,7 @@
 # Commands:
 #   hubot uptime - Display server uptime.
 
-Process = require('child_process')
+Process = require("child_process")
 
 module.exports = (robot) ->
 
