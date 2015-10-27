@@ -1,3 +1,9 @@
+# Description:
+#   Get uptime of the server.
+#
+# Commands:
+#   hubot uptime - Display server uptime.
+
 Process = require('child_process')
 
 module.exports = (robot) ->
