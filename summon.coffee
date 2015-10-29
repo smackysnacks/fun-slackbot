@@ -18,7 +18,7 @@ module.exports = (robot) ->
         users = []
         for _, v of robot.brain.users() or {}
             users.push({name: v.name, count: getSummonCount(v.name)})
-        users.filter (a) ->
+        users = users.filter (a) ->
             return a.count is not 0
         users.sort (a, b) ->
             return b.count - a.count
