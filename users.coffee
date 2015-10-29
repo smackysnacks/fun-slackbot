@@ -1,3 +1,10 @@
+# Description:
+#   Get user statistics from server.
+#
+# Commands:
+#   hubot list all users - List all users registered on server.
+#   hubot list online users - List users currently online.
+
 Util = require("util")
 
 module.exports = (robot) ->
@@ -18,7 +25,7 @@ module.exports = (robot) ->
             else
                 res.send "There are #{users.length} total users."
         for user in users
-            res.send "```  #{Util.inspect(user)}```"
+            res.send "```  #{user.name}```"
 
     robot.respond /list online users/i, (res) ->
         users = (user for user in getAllUsers() when user["slack"]["presence"] is "active")
@@ -30,4 +37,4 @@ module.exports = (robot) ->
             else
                 res.send "There are #{users.length} online users."
         for user in users
-            res.send "```  #{Util.inspect(user)}```"
+            res.send "```  #{user.name}```"
