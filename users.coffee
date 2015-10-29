@@ -18,7 +18,7 @@ module.exports = (robot) ->
     formatUsersResponse = (users) ->
         response = ""
         if users.length > 0
-            response += "```  #{users[0].name}"
+            response += "```#{users[0].name}"
             for user in users[1..]
                 response += "\n#{user.name}"
             response += "```"
