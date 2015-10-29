@@ -15,6 +15,15 @@ module.exports = (robot) ->
             users.push(v)
         return users
 
+    formatUsersResponse = (users) ->
+        response = ""
+        if users.length > 0
+            response += "```  #{users[0].name}"
+            for user in users[1..]
+                response += "\n#{user.name}"
+            response += "```"
+        return response
+
     robot.respond /list all users/i, (res) ->
         users = getAllUsers()
         switch users.length
@@ -24,8 +33,8 @@ module.exports = (robot) ->
                 res.send "There is 1 total user."
             else
                 res.send "There are #{users.length} total users."
-        for user in users
-            res.send "```  #{user.name}```"
+        if users.length > 0
+            res.send formatUsersResponse users
 
     robot.respond /list online users/i, (res) ->
         users = (user for user in getAllUsers() when user["slack"]["presence"] is "active")
@@ -36,5 +45,5 @@ module.exports = (robot) ->
                 res.send "There is 1 online user."
             else
                 res.send "There are #{users.length} online users."
-        for user in users
-            res.send "```  #{user.name}```"
+        if users.length > 0
+            res.send formatUsersResponse users
