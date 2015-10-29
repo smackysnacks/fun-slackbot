@@ -4,7 +4,6 @@
 # Commands:
 #   hubot git pull - Pull new scripts from Github repo.
 
-Util = require("util")
 Process = require("child_process")
 
 module.exports = (robot) ->
