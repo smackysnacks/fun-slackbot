@@ -3,8 +3,7 @@
 #   bidding?
 #
 # Commands:
-#   hubot summon count - Print the number of times hubot has been summoned by
-#   each user.
+#   hubot summon count - Show hubot usage statistics.
 
 module.exports = (robot) ->
 
