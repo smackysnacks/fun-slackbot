@@ -1,3 +1,11 @@
+# Description:
+#   Keep track of hubot's usage statistics. Who is requesting hubot to do their
+#   bidding?
+#
+# Commands:
+#   hubot summon count - Print the number of times hubot has been summoned by
+#   each user.
+
 module.exports = (robot) ->
 
     getSummonCount = (user) ->
