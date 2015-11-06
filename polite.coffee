@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-    robot.hear /thank(s| you) (P|p)(B|b)/i, (res) ->
+    robot.hear new RegExp("thank(s| you) #{robot.name}", "i"), (res) ->
         user = res.message.user.name
         thanks = [
             "You're welcome #{user}",
