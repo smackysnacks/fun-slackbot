@@ -2,7 +2,7 @@
 #   Send Clones to Chat.
 #
 # Commands:
-#   pb send in the clones - Send In The Clones.
+#   hubot send in the clones - Send In The Clones.
 
 module.exports = (robot) ->
     robot.respond /send in the clones/i, (res) ->
