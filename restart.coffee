@@ -9,4 +9,4 @@ Process = require("child_process")
 module.exports = (robot) ->
 
     robot.respond /restart/i, (res) ->
-        Process.kill()
+        process.exit()
